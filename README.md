@@ -1,4 +1,4 @@
-#Email Cron Notification
+# Email Cron Notification
 
 Notifies the users of a given role each time the Drupal cron runs.
 
