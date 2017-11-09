@@ -2,17 +2,17 @@
 
 Notifies the users of a given role each time the Drupal cron runs.
 
-##Description
+## Description
 
 The Email Cron Notification module provides a configuration interface 
 for defining one or more roles who shall receive a notification each time 
 Drupal cron runs.
 
-##Benefits
+## Benefits
 
 Be notified on cron tasks.
 
-##Notices
+## Notices
 
 In development, left improvement todo :
 * Provide means for setting which info shall be sent, e.g. info about the cron result and specific cron jobs 
@@ -26,10 +26,10 @@ In development, left improvement todo :
 3. Fill out the form and save it, optionnaly adding some specific email outside the defined role
 4. When you save new notification from now on, it should automatically send the according notification each time the cron runs.
 
-##Credits:
+## Credits:
 
 This module is based on the Content Moderation Notification by [Jonathan Hedstrom](https://www.drupal.org/u/jhedstrom) and [Rob Holmes](https://www.drupal.org/u/rob-holmes)
 
 Current maintainers:
 
-- Benoît de Raemy - http://xeer.ch
+- Benoît de Raemy
