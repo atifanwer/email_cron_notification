@@ -1,0 +1,15 @@
+# Add some local task links to facilitate navigation.
+
+email_cron_notification.add_action:
+  route_name: entity.email_cron_notification.add_form
+  title: 'Add notification'
+  appears_on:
+    - entity.email_cron_notification.collection
+
+email_cron_notification.list_action:
+  route_name: entity.email_cron_notification.collection
+  title: 'List notifications'
+  appears_on:
+    - entity.email_cron_notification.add_form
+    - entity.email_cron_notification.edit
+    - entity.email_cron_notification.delete

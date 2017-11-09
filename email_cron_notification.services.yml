@@ -1,0 +1,7 @@
+services:
+  email_cron_notification.notification_information:
+    class: Drupal\email_cron_notification\NotificationInformation
+    arguments: ['@entity_type.manager']
+  email_cron_notification.notification:
+    class: Drupal\email_cron_notification\Notification
+    arguments: [ '@entity_type.manager', '@plugin.manager.mail', '@module_handler', '@email_cron_notification.notification_information', '@?token.entity_mapper']

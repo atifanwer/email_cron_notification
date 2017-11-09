@@ -1,0 +1,6 @@
+name: Email Cron Notification
+description: Notifies the users of a given role each time the Drupal cron runs.
+package: Custom
+
+type: module
+core: 8.x

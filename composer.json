@@ -1,0 +1,13 @@
+{
+  "name": "drupal/email_cron_notification",
+  "description": "Notifies the users of a given role each time the Drupal cron runs.",
+  "type": "drupal-module",
+  "homepage": "https://xeer.ch",
+  "support": {
+    "issues": "https://xeer.ch"
+  },
+  "license": "GPL-2.0+",
+  "require-dev": {
+    "drupal/token": "^1.0"
+  }
+}

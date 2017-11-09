@@ -1,0 +1,11 @@
+email_cron_notification.menu:
+  title: Email Cron Notification
+  route_name: entity.email_cron_notification.collection
+
+# menu items definition
+entity.email_cron_notifications.collection:
+  title: 'Email cron notifications'
+  route_name: entity.email_cron_notification.collection
+  description: 'Administer cron email notifications.'
+  parent: system.admin_config_system
+  weight: 21

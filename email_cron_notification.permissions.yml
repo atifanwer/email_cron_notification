@@ -1,0 +1,4 @@
+#Define the administer permission for the email_cron_notification config entity.
+'administer email cron notification':
+  title: 'Administer email cron notification'
+  description: Create and edit notifications when cron runs.

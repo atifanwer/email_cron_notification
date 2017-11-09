@@ -1,0 +1,41 @@
+# Schema
+email_cron_notification.email_cron_notification.*:
+  type: config_entity
+  label: 'EmailCrongNotification'
+  mapping:
+    id:
+      type: string
+      label: 'EmailCrongNotification id'
+    uuid:
+      type: string
+      label: 'UUID'
+    roles:
+      type: sequence
+      sequence:
+        type: string
+        label: 'Roles'
+    emails:
+       type: string
+       label: 'Emails'
+    subject:
+       type: string
+       label: 'Subject'
+    body:
+      type: text_format
+      label: 'Email'
+      mapping:
+        value:
+          type: label
+          label: 'Value'
+        format:
+          type: string
+          label: 'Text format'
+    label:
+      type: label
+      label: 'Label'
+    langcode:
+      type: string
+      label: 'Default language'
+    status:
+      type: boolean
+      label: 'Notification status'

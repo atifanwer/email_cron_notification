@@ -1,0 +1,53 @@
+# This is the router item for listing all entities.
+entity.email_cron_notification.collection:
+  path: '/admin/config/system/cron/notifications'
+  defaults:
+    _entity_list: 'email_cron_notification'
+    _title: 'Email Cron Notifications'
+  requirements:
+    _permission: 'administer email cron notifications'
+
+# This is the router item for adding our entity.
+entity.email_cron_notification.add_form:
+  path: '/admin/config/system/cron/notifications/add'
+  defaults:
+    _title: 'Add notification'
+    _entity_form: email_cron_notification.add
+  requirements:
+    _entity_create_access: email_cron_notification
+
+# This is the router item for editing our entity.
+entity.email_cron_notification.edit_form:
+  path: '/admin/config/system/cron/notifications/manage/{email_cron_notification}'
+  defaults:
+    _title: 'Edit notification'
+    _entity_form: email_cron_notification.edit
+  requirements:
+    _entity_access: email_cron_notification.update
+
+# This is the router item for deleting an instance of our entity.
+entity.email_cron_notification.delete_form:
+  path: '/admin/config/system/cron/notifications/manage/{email_cron_notification}/delete'
+  defaults:
+    _title: 'Delete notification'
+    _entity_form: email_cron_notification.delete
+  requirements:
+    _entity_access: email_cron_notification.delete
+
+# Enable a notification.
+entity.email_cron_notification.enable_form:
+  path: '/admin/config/system/cron/notifications/manage/{email_cron_notification}/enable'
+  defaults:
+    _title: 'Enable notification'
+    _entity_form: email_cron_notification.enable
+  requirements:
+    _entity_access: email_cron_notification.update
+
+# Disable a notification.
+entity.email_cron_notification.disable_form:
+  path: '/admin/config/system/cron/notifications/manage/{email_cron_notification}/disable'
+  defaults:
+    _title: 'Disable notification'
+    _entity_form: email_cron_notification.disable
+  requirements:
+    _entity_access: email_cron_notification.update

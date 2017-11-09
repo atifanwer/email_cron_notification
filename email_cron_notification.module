@@ -1,0 +1,68 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations for the Email Cron notificatin module - hook_cron().
+ */
+
+/**
+ * @defgroup email_cron_notification Email Cron Notification
+ *
+**/
+use Drupal\Component\Render\PlainTextOutput;
+use Drupal\Core\Render\Markup;
+
+
+
+/**
+ * Implements hook_mail().
+ */
+function email_cron_notification_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'email_cron_notification':
+      // Add headers, specifically this should include the Bcc header.
+      if (!empty($params['headers'])) {
+        foreach ($params['headers'] as $id => $value) {
+          $message['headers'][$id] = $params['headers'][$id];
+        }
+      }
+
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      /** @todo $token_service
+      $token_service = \Drupal::token();
+
+      $context = $params['context'];
+
+      $subject = PlainTextOutput::renderFromHtml($token_service->replace($params['subject'], $context));
+      $body = $token_service->replace($params['message'], $context);
+       * */
+      $subject = PlainTextOutput::renderFromHtml($params['subject']);
+
+      $body = $params['message'];
+
+      $message['subject'] = str_replace(["\r", "\n"], '', $subject);
+      $message['body'][] = Markup::create($body);
+      break;
+  }
+}
+
+/**
+ * Implements hook_cron().
+ *
+ * We implement hook_cron() to do "background" processing. It gets called every
+ * time the Drupal cron runs. We then decide what has to happen in response.
+ *
+ * Here we trigger a mail to be sent to each users belonging a certain role.
+ */
+function email_cron_notification_cron() {
+  /*todo: sent any info regarding the current cron job ?
+  */
+  \Drupal::service('email_cron_notification.notification')->processEntity();
+}
+
+
+
+
+/**
+ * @} End of "defgroup email_cron_notification".
+ */
